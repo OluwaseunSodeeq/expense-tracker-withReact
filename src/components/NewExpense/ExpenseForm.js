@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 const ExpenseForm = (props) => {
+  //working with states
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -11,9 +12,9 @@ const ExpenseForm = (props) => {
   //     enteredDate: "",
   //   });
 
+  // InputedTitle callBackFuntion its event is onChange
   const titleChangehandler = (ev) => {
     console.log(ev.target.value);
-
     // Best way
     setEnteredTitle(ev.target.value);
 
@@ -25,16 +26,21 @@ const ExpenseForm = (props) => {
     //   return { ...prevState, enteredTitle: ev.target.value };
     // });
   };
+
+  // Inputedamount callBackFuntion its event is onChange
   const amountChangehandler = (ev) => {
     console.log(ev.target.value);
     setEnteredAmount(ev.target.value);
     // setUserInput({ ...userInput, enteredAmount: ev.target.value });
   };
+
+  // InputedDate callBackFuntion its event is onChange
   const dateChangehandler = (ev) => {
     console.log(ev.target.value);
     setEnteredDate(ev.target.value);
     // setUserInput({ ...userInput, enteredDate: ev.target.value });
   };
+  // Submit callBackFuntion its event is onSubmit
   const submitHandler = (ev) => {
     ev.preventDefault();
     const enteredData = {
@@ -43,8 +49,10 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     };
     console.log(enteredData);
+    // a method on props object on App.js
     props.onSaveExpensesData(enteredData);
 
+    //clear the fields
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
@@ -58,6 +66,7 @@ const ExpenseForm = (props) => {
           <input
             type="text"
             value={enteredTitle}
+            // adding change event to a function
             onChange={titleChangehandler}
           />
         </div>
