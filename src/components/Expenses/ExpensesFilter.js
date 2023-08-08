@@ -2,6 +2,8 @@ import React from "react";
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
+  console.log(props); //{selected: '2022', onChangeFilter: ƒ}
+
   // Filter callBackFuntion its event is onChnage
   const dropDownChangeHandler = (ev) => {
     props.onChangeFilter(ev.target.value);

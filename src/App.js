@@ -7,11 +7,11 @@ const DUMMY_EXPENSES = [
     curId: "e1",
     title: "Chelsea",
     amount: 5000,
-    date: new Date(2024, 2, 14),
+    date: new Date(2023, 2, 14),
   },
   {
     curId: "e2",
-    title: "Man U",
+    title: "Man United",
     amount: 3000,
     date: new Date(2022, 2, 24),
   },
@@ -23,7 +23,7 @@ const DUMMY_EXPENSES = [
   },
   {
     curId: "e4",
-    title: "Liverpool",
+    title: "Liverpool Fc",
     amount: 1000,
     date: new Date(2019, 7, 10),
   },
@@ -38,14 +38,13 @@ function App() {
 
       return [expense, ...prevExpenses];
     });
-    // data.push(expense);
     console.log(expense);
   };
 
   return (
     <div>
       <NewExpense onAddExpense={addExpensesHandler} />
-      <Expense data={expenses}></Expense>
+      <Expense data={expenses} />
     </div>
   );
 }

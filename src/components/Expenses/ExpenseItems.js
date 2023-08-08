@@ -12,6 +12,7 @@ function ExpenseItem(props) {
   //   // inititial value
   //   console.log(title);
   // };
+  console.log(props);
 
   return (
     <li>
